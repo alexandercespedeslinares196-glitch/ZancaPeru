@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Quote, CheckCircle, ThumbsUp } from 'lucide-react';
+import { Quote, CheckCircle, Info } from 'lucide-react';
 import { TESTIMONIALS } from '../data/content';
 
 export const Testimonials: React.FC = () => {
@@ -9,26 +9,14 @@ export const Testimonials: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs sm:text-sm font-bold text-primary uppercase tracking-widest bg-primary/10 px-3.5 py-1.5 rounded-full border border-primary/20">
-            Testimonios Verificados
+            Opiniones de Clientes
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight">
-            Lo que Dicen Nuestros Clientes
+            Experiencias de Nuestro Servicio
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            La confianza de los hogares y empresas en Cajamarca es nuestra mejor carta de presentación.
+            La satisfacción y el cuidado de los hogares en Cajamarca y Baños del Inca respaldan nuestro trabajo diario.
           </p>
-
-          {/* Google Reviews Badge */}
-          <div className="inline-flex items-center gap-3 bg-muted/60 px-4 py-2 rounded-full border border-border mt-6">
-            <div className="flex text-amber-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-amber-400" />
-              ))}
-            </div>
-            <span className="text-xs font-bold text-foreground">
-              Calificación 4.9/5 basada en clientes reales
-            </span>
-          </div>
         </div>
 
         {/* Testimonials Grid */}
@@ -36,18 +24,11 @@ export const Testimonials: React.FC = () => {
           {TESTIMONIALS.map((review, index) => (
             <div
               key={index}
-              className="bg-card rounded-2xl p-7 shadow-card border border-border flex flex-col justify-between hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 relative group"
+              className="bg-card rounded-2xl p-7 shadow-card border border-border flex flex-col justify-between hover:shadow-card-hover transition-all duration-300 relative group"
             >
-              <Quote className="h-8 w-8 text-primary/20 absolute top-5 right-5 pointer-events-none group-hover:text-primary/40 transition-colors" />
+              <Quote className="h-8 w-8 text-primary/15 absolute top-5 right-5 pointer-events-none group-hover:text-primary/30 transition-colors" />
 
               <div>
-                {/* Rating stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(review.stars)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-
                 {/* Review text */}
                 <p className="text-sm text-foreground/90 italic leading-relaxed mb-6">
                   "{review.text}"
@@ -61,12 +42,12 @@ export const Testimonials: React.FC = () => {
                   </h4>
                   <div className="flex items-center gap-1 text-[11px] text-brand-700 font-semibold bg-brand-50 px-2 py-0.5 rounded-md">
                     <CheckCircle className="h-3 w-3" />
-                    <span>Verificado</span>
+                    <span>Cliente real</span>
                   </div>
                 </div>
 
                 <p className="text-xs text-muted-foreground">
-                  {review.role}
+                  {review.location}
                 </p>
 
                 {review.service && (
@@ -79,17 +60,17 @@ export const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Satisfaction Guarantee Callout */}
-        <div className="mt-14 max-w-3xl mx-auto bg-primary/5 rounded-2xl p-6 border border-primary/20 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center shrink-0 shadow-md">
-            <ThumbsUp className="h-6 w-6" />
+        {/* Results Disclaimer Callout Box (Replacing repeating wash for free) */}
+        <div className="mt-14 max-w-3xl mx-auto bg-muted/60 rounded-2xl p-6 border border-border text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 shadow-sm">
+            <Info className="h-6 w-6" />
           </div>
           <div className="text-center sm:text-left">
             <h4 className="text-sm font-bold text-foreground">
-              Nuestra Garantía de Calidad Zanca Limpieza
+              Compromiso de Honestidad y Calidad
             </h4>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              Si al secar el mueble no estás 100% satisfecho con el resultado, repetimos el lavado sin costo adicional.
+            <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+              Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.
             </p>
           </div>
         </div>
@@ -97,4 +78,3 @@ export const Testimonials: React.FC = () => {
     </section>
   );
 };
-

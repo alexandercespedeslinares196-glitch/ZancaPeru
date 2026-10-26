@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bed, Armchair, Layers, Utensils, Briefcase, Car, Check, ArrowRight } from 'lucide-react';
+import { Bed, Armchair, Layers, Utensils, Car, Shield, Check, ArrowRight, Sparkles, Info } from 'lucide-react';
 import { SERVICES, ServiceItem } from '../data/content';
 import { getWhatsAppUrl } from '../data/config';
 
@@ -14,10 +14,10 @@ export const Services: React.FC = () => {
         return <Layers className="h-6 w-6" />;
       case 'Utensils':
         return <Utensils className="h-6 w-6" />;
-      case 'Briefcase':
-        return <Briefcase className="h-6 w-6" />;
       case 'Car':
         return <Car className="h-6 w-6" />;
+      case 'Shield':
+        return <Shield className="h-6 w-6" />;
       default:
         return <Armchair className="h-6 w-6" />;
     }
@@ -32,10 +32,18 @@ export const Services: React.FC = () => {
             Nuestros Servicios
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight">
-            Soluciones de Limpieza Especializada
+            Lavado y Cuidado Profesional
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Utilizamos tecnología de inyección-succión alemana y fórmulas biodegradables que limpian a fondo sin dañar los tejidos ni decolorar tus muebles.
+            Limpieza profunda por inyección y extracción con productos ecológicos formulados para renovar la frescura de tus espacios con cita previa a domicilio.
+          </p>
+        </div>
+
+        {/* Results Disclaimer Banner (Mandatory Notice) */}
+        <div className="max-w-4xl mx-auto mb-12 bg-amber-500/10 border border-amber-500/20 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 text-amber-900 dark:text-amber-200">
+          <Info className="h-5 w-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+          <p className="text-xs sm:text-sm leading-relaxed">
+            <strong>Transparencia en los resultados:</strong> Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.
           </p>
         </div>
 
@@ -52,7 +60,7 @@ export const Services: React.FC = () => {
             >
               {service.popular && (
                 <div className="absolute -top-3 right-6 bg-gradient-to-r from-primary to-accent text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                  Más Solicitado
+                  Muy Solicitado
                 </div>
               )}
 
@@ -90,7 +98,7 @@ export const Services: React.FC = () => {
 
               {/* Action Button */}
               <a
-                href={getWhatsAppUrl(`¡Hola Zanca Limpieza! 👋 Me interesa cotizar el servicio para: ${service.title}. ¿Me podrían dar información de precios y disponibilidad?`)}
+                href={getWhatsAppUrl(`Hola, Zanca Limpieza. Quisiera una cotización para lavar: ${service.title}`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 border border-primary/30 text-primary bg-primary/5 hover:bg-primary hover:text-white transition-all duration-200"
@@ -102,27 +110,29 @@ export const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* Banner Callout */}
-        <div className="mt-14 bg-gradient-to-r from-ink-900 to-ink-800 rounded-2xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="text-center md:text-left">
-            <h4 className="text-xl font-bold mb-1.5">
-              ¿Tienes un requerimiento especial o empresa en Cajamarca?
-            </h4>
-            <p className="text-sm text-ink-300">
-              Ofrecemos planes corporativos para oficinas, consultorios médicos, restaurantes y hoteles con factura y atención en horarios flexibles.
-            </p>
+        {/* Perfumado opcional & Atención Callout */}
+        <div className="mt-14 max-w-4xl mx-auto bg-card rounded-2xl p-6 sm:p-8 border border-border flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-aqua-400/10 text-aqua-600 flex items-center justify-center shrink-0 mt-1">
+              <Sparkles className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h4 className="text-base sm:text-lg font-bold text-foreground mb-1">
+                Extra opcional: Perfumado de muebles y tapicerías
+              </h4>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Si lo deseas, puedes solicitar el perfumado como un servicio extra opcional para añadir un toque agradable de frescura tras la limpieza profunda. Consulta disponibilidad al solicitar tu cotización.
+              </p>
+            </div>
           </div>
           <a
-            href={getWhatsAppUrl("¡Hola Zanca Limpieza! 👋 Requiero una cotización corporativa para mi empresa/local comercial en Cajamarca.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whitespace-nowrap gradient-primary text-white font-bold px-6 py-3.5 rounded-xl text-sm shadow-md hover:scale-105 transition-all"
+            href="#cotizador"
+            className="whitespace-nowrap gradient-primary text-white font-bold px-6 py-3 rounded-xl text-sm shadow-md hover:scale-105 transition-all shrink-0"
           >
-            Cotización Corporativa
+            Solicitar Cotización
           </a>
         </div>
       </div>
     </section>
   );
 };
-

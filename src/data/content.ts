@@ -1,6 +1,7 @@
 export interface ServiceItem {
   id: string;
   title: string;
+  category: string;
   description: string;
   tag: string;
   features: string[];
@@ -10,239 +11,358 @@ export interface ServiceItem {
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: "colchones",
-    title: "Colchones",
-    description: "Eliminamos ácaros, bacterias y alérgenos. Desinfección profunda para un descanso 100% saludable.",
-    tag: "Salud & Descanso",
+    id: "muebles-tela",
+    title: "Muebles de Tela",
+    category: "Muebles de tela",
+    description: "Limpieza profunda por inyección y extracción para sofás, juegos 3-2-1, seccionales en L y U, y sofá cama.",
+    tag: "Hogar & Sala",
     features: [
-      "Extracción profunda de ácaros y células muertas",
-      "Eliminación de manchas de sudor y orina",
-      "Desodorización y neutralización de olores",
-      "Secado rápido con humedad residual mínima"
-    ],
-    icon: "Bed",
-    popular: true
-  },
-  {
-    id: "sofas",
-    title: "Sofás y Muebles de Sala",
-    description: "Lavado profundo de tapicería en tela, cuero y microfibra. Recuperamos el color original sin desteñir.",
-    tag: "Hogar & Confort",
-    features: [
-      "Tratamiento especial para manchas difíciles",
-      "Champú desengrasante biodegradable con pH neutro",
-      "Inyección y succión industrial simultánea",
-      "Apto para muebles seccionales y sillones reclinables"
+      "Sofás individuales, 2 y 3 cuerpos",
+      "Juegos completos 3-2-1",
+      "Muebles seccionales en L y en U",
+      "Sofá cama y sillones reclinables",
+      "Productos ecológicos que cuidan la fibra"
     ],
     icon: "Armchair",
     popular: true
   },
   {
-    id: "alfombras",
-    title: "Alfombras y Tapetes",
-    description: "Lavado profesional para hogares y oficinas. Recuperamos colores vivos y eliminamos polvo incrustado.",
-    tag: "Residencial & Comercial",
+    id: "colchones",
+    title: "Colchones",
+    category: "Colchones",
+    description: "Limpieza profunda por extracción para colchones de todas las plazas, incluida cuna. Cuidado higiénico para un mejor descanso.",
+    tag: "Descanso & Salud",
     features: [
-      "Aspirado rotativo de alta vibración",
-      "Lavado de pelo corto, mediano y alfombras shaggy",
-      "Desinfección anti-hongos y anti-humedad",
-      "Cuidado delicado de fibras naturales y sintéticas"
+      "Todas las plazas: Cuna, 1 y 1.5 plz, 2 plz, Queen y King",
+      "Extracción profunda de suciedad y polvo",
+      "Lavado con productos ecológicos y seguros",
+      "Tiempo de lavado: aprox. 1 a 2 horas (tiempo de lavado, no de secado)"
     ],
-    icon: "Layers"
+    icon: "Bed",
+    popular: true
   },
   {
     id: "sillas",
-    title: "Sillas de Comedor",
-    description: "Cuidado especializado para telas delicadas. Manchas de alimentos, grasa y uso diario completamente resueltas.",
-    tag: "Telas Delicadas",
+    title: "Sillas de Comedor y Oficina",
+    category: "Sillas",
+    description: "Lavado profesional de tapicería en sillas de comedor y sillas de oficina, retirando manchas de comida y uso diario.",
+    tag: "Comedor & Oficina",
     features: [
-      "Eliminación de manchas de comida, café y salsas",
-      "Desmanchado focalizado sin cercos de agua",
-      "Protección para estructuras de madera y metal",
-      "Ideal para juegos de 4, 6 y 8 sillas"
+      "Sillas de comedor (asiento y respaldo tapizado)",
+      "Sillas ergonómicas y ejecutivas de oficina",
+      "Remoción de suciedad acumulada y manchas",
+      "Atención para hogares, oficinas y consultorios"
     ],
     icon: "Utensils"
   },
   {
-    id: "oficina",
-    title: "Muebles de Oficina",
-    description: "Ambientes de trabajo limpios y productivos. Limpieza profunda y sanitización de sillas ergonómicas y paneles.",
-    tag: "Productividad",
+    id: "alfombras",
+    title: "Alfombras",
+    category: "Alfombras",
+    description: "Lavado especializado para alfombras de pelo corto, mediano o largo. Servicio integral con recojo y entrega.",
+    tag: "Hogar & Negocios",
     features: [
-      "Servicio fuera de horario laboral para empresas",
-      "Sanitización para alto tráfico de colaboradores",
-      "Atención a oficinas, notarías, consultorios y bancos",
-      "Facturación para empresas en Cajamarca"
+      "Alfombras de pelo corto, mediano y pelo largo",
+      "Limpieza y desmanchado profundo de tejidos",
+      "Tiempo de entrega: aprox. 3 a 5 días hábiles",
+      "Incluye servicio de recojo y entrega a domicilio"
     ],
-    icon: "Briefcase"
+    icon: "Layers"
   },
   {
     id: "vehiculos",
-    title: "Tapicería de Autos",
-    description: "Limpieza detallada de asientos de autos y camionetas. Retiro de manchas de bebidas, polvo y olores a humedad.",
+    title: "Asientos de Auto",
+    category: "Asientos de auto",
+    description: "Limpieza profunda de tapicería de asientos para autos sedán, camionetas y SUV directamente a tu domicilio.",
     tag: "Automotriz",
     features: [
+      "Vehículos sedán, camionetas y camionetas SUV",
       "Limpieza de asientos delanteros y posteriores",
-      "Tratamiento especial para telas y cueros",
-      "Eliminación de olores a tabaco y humedad",
-      "Atención en tu cochera o domicilio"
+      "Extracción de polvo, suciedad y manchas",
+      "Atención a domicilio en tu cochera con cita previa"
     ],
     icon: "Car"
+  },
+  {
+    id: "muebles-cuero",
+    title: "Muebles de Cuero (Siliconado)",
+    category: "Muebles de cuero",
+    description: "Servicio de siliconado y acondicionamiento protector para nutrir y conservar el cuero (no realizamos lavado al agua de cuero).",
+    tag: "Cuidado de Cuero",
+    features: [
+      "Aplicación de siliconado protector especial",
+      "Nutrición de la piel para prevenir resequedad",
+      "Devuelve el brillo y la suavidad al material",
+      "No se realiza lavado con agua para proteger el cuero"
+    ],
+    icon: "Shield"
   }
 ];
 
 export const METHOD_STEPS = [
   {
     step: "01",
-    title: "Inspección y Diagnóstico",
-    description: "Evaluamos el tipo de fibra textil, estado de las manchas y nivel de suciedad para seleccionar el producto adecuado.",
+    title: "Inspección del Artículo",
+    description: "Evaluamos el tipo de fibra o tapiz, el estado de las manchas y las condiciones del artículo para seleccionar el procedimiento adecuado.",
     icon: "Search"
   },
   {
     step: "02",
-    title: "Aspirado Industrial Anti-Ácaros",
-    description: "Aspirado de alta potencia para retirar polvo profundo, cabellos, restos sólidos y ácaros antes del lavado húmedo.",
+    title: "Aspirado Inicial Profundo",
+    description: "Retiramos residuos sólidos, polvo y partículas superficiales acumuladas antes de iniciar la limpieza húmeda.",
     icon: "Wind"
   },
   {
     step: "03",
-    title: "Pre-lavado con Espuma Activa",
-    description: "Aplicamos soluciones biodegradables que desprenden la grasa corporal y manchas adheridas a nivel molecular.",
+    title: "Aplicación de Solución Ecológica",
+    description: "Utilizamos productos ecológicos biodegradables que disuelven la suciedad y grasa adherida sin maltratar los tejidos.",
     icon: "Sparkles"
   },
   {
     step: "04",
     title: "Inyección y Extracción Profunda",
-    description: "Nuestra máquina Kärcher inyecta agua a presión con desinfectante y succiona al vacío la suciedad acumulada.",
+    description: "Inyectamos la solución limpiadora y succionamos simultáneamente la suciedad desde el interior de la tapicería.",
     icon: "Activity"
   },
   {
     step: "05",
-    title: "Desodorización y Secado Rápido",
-    description: "Aplicamos aromatizante antibacterial neutro. Tu mueble queda listo para usar en solo 2 a 4 horas.",
+    title: "Perfumado Opcional y Secado",
+    description: "Opcionalmente aplicamos perfumado para dejar una agradable sensación de frescura. El secado se completa de forma natural según el ambiente.",
     icon: "Sun"
   }
 ];
 
 export const TESTIMONIALS = [
   {
-    name: "María García",
-    role: "Vecina de Baños del Inca",
-    text: "Increíble el cambio en mi colchón. Mis alergias mejoraron desde la primera limpieza. ¡Totalmente recomendados en Cajamarca!",
-    stars: 5,
-    service: "Limpieza de Colchón Queen"
+    name: "María Elena García",
+    location: "Baños del Inca",
+    text: "Excelente servicio a domicilio. Lavaron mi juego de sala y colchón con mucho cuidado y profesionalismo. Llegaron puntuales con cita previa y el resultado fue notable.",
+    service: "Juego de Sala y Colchón"
   },
   {
     name: "Carlos Rodríguez",
-    role: "Administrador de Empresa",
-    text: "Contratamos el servicio para 40 sillas de oficina en nuestro local del centro. El equipo fue puntual, profesional y los resultados excelentes.",
-    stars: 5,
-    service: "Sillas de Oficina & Paneles"
+    location: "Urb. Santa Rosa, Cajamarca",
+    text: "Puntuales y cuidadosos al momento de trabajar. El sofá seccional quedó muy limpio y con una sensación de frescura que hacía falta. Totalmente recomendados.",
+    service: "Sofá Seccional"
   },
   {
-    name: "Ana Martínez",
-    role: "Diseñadora de Interiores",
-    text: "Rescataron una alfombra persa que creí perdida por manchas de vino y tierra. El cuidado con los materiales delicados es impecable.",
-    stars: 5,
-    service: "Alfombra Tradicional"
+    name: "Patricia Mendoza",
+    location: "San Sebastián, Cajamarca",
+    text: "Muy buena atención con nuestras sillas de comedor y alfombra. Cumplieron con el recojo y la entrega de la alfombra en los días pactados.",
+    service: "Sillas de Comedor y Alfombra"
   },
   {
-    name: "Jorge Mendoza",
-    role: "Urb. Ramón Castilla",
-    text: "Tengo dos perros y el sofá tenía olor y manchas de patas. Quedó oliendo a limpio y con los colores como el día que lo compramos.",
-    stars: 5,
-    service: "Sofá Seccional 4 Cuerpos"
+    name: "Jorge Huamán",
+    location: "Cajamarca Centro",
+    text: "Excelente trato desde la coordinación por WhatsApp. Solicité el servicio para los asientos de mi camioneta y quedaron impecables.",
+    service: "Asientos de Camioneta"
   }
 ];
 
 export const FAQS = [
   {
-    q: "¿Cuánto tarda en secar un mueble después de la limpieza?",
-    a: "El tiempo de secado varía entre 2 y 4 horas gracias a nuestro sistema de inyección y extracción profunda de alta succión. A diferencia del lavado tradicional con escobilla y manguera, nosotros extraemos el 90% del agua de inmediato."
+    q: "¿Cuánto tiempo toma el servicio de lavado?",
+    a: "En colchones, el lavado toma aproximadamente de 1 a 2 horas (este tiempo corresponde estrictamente al lavado, no al secado). En alfombras, el proceso completo con recojo, lavado profundo y entrega toma aproximadamente de 3 a 5 días hábiles."
   },
   {
-    q: "¿Los productos que usan son seguros para niños y mascotas?",
-    a: "Sí, absolutamente. Todos nuestros químicos de limpieza son biodegradables, hipoalergénicos, sin cloro ni solventes tóxicos, seguros para toda la familia y mascotas."
+    q: "¿Cuánto tarda en secar el mueble o colchón?",
+    a: "El tiempo de secado no es fijo: depende del tipo de tejido, el clima y la ventilación del espacio. Al utilizar el sistema de extracción profunda retiramos la mayor parte de la humedad, facilitando un secado natural."
   },
   {
-    q: "¿Cuánto cuesta el servicio de limpieza en Cajamarca?",
-    a: "El precio depende del tipo de mueble, tamaño y condición. Por ejemplo, una silla de comedor ronda desde S/ 15, un colchón de 2 plazas desde S/ 70 y un sofá de 3 cuerpos desde S/ 90. ¡Puedes usar nuestro cotizador interactivo o escribirnos al WhatsApp para un presupuesto exacto!"
+    q: "¿Salen todas las manchas al 100%?",
+    a: "Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente con otros productos pueden no desaparecer por completo, aunque siempre buscamos el mejor resultado posible cuidando la tela."
   },
   {
-    q: "¿Trabajan a domicilio en todo Cajamarca?",
-    a: "Sí, el 100% de nuestros servicios se realizan a domicilio. Llevamos todos los equipos profesionales a tu hogar, departamento u oficina en Cajamarca ciudad, Baños del Inca y zonas aledañas."
+    q: "¿Cómo solicito una cotización exacta?",
+    a: "Puedes usar nuestro formulario web o escribirnos directamente a nuestro WhatsApp (+51 937 712 772). Indícanos qué artículo deseas lavar, en qué zona te encuentras y envíanos una foto del artículo para que nuestro equipo confirme el precio exacto."
   },
   {
-    q: "¿Ofrecen garantía de satisfacción?",
-    a: "Absolutamente. Contamos con garantía 100% Zanca Limpieza. Si al secar el mueble notas alguna mancha que no haya salido según lo acordado, repetimos el servicio sin ningún costo adicional."
+    q: "¿Hacen lavado de muebles de cuero?",
+    a: "Para muebles de cuero realizamos un servicio de siliconado y acondicionamiento protector que nutre y protege el material contra resequedad. No ofrecemos servicio de lavado con agua para muebles de cuero."
   },
   {
-    q: "¿Necesito preparar algo antes de que llegue el técnico?",
-    a: "Solo necesitamos un punto de enchufe eléctrico común (220V) y acceso a agua limpia (un caño o lavadero). Nosotros nos encargamos de mover y proteger el espacio alrededor."
+    q: "¿Dónde atienden y cómo se coordina la cita?",
+    a: "Atendemos exclusivamente a domicilio en Cajamarca y Baños del Inca, siempre con cita previa programada según disponibilidad. No contamos con local de atención al público."
   }
 ];
 
-// Opciones para el cotizador interactivo
-export const CALCULATOR_CATEGORIES = [
+// Opciones dinámicas para la Solicitud de Cotización (sin precios inventados)
+export interface QuoteCategoryOption {
+  id: string;
+  name: string;
+  icon: string;
+  questionLabel: string;
+  itemTypes: { id: string; label: string }[];
+  quantityLabel: string;
+  specificQuestions?: {
+    id: string;
+    label: string;
+    options: string[];
+  }[];
+}
+
+export const QUOTE_CATEGORIES: QuoteCategoryOption[] = [
   {
-    id: "sofa",
-    name: "Sofás y Sillones",
+    id: "muebles-tela",
+    name: "Muebles de Tela",
     icon: "Armchair",
-    items: [
-      { id: "sofa-1", name: "Sillón individual (1 cuerpo)", basePrice: 40 },
-      { id: "sofa-2", name: "Sofá mediano (2 cuerpos)", basePrice: 70 },
-      { id: "sofa-3", name: "Sofá estándar (3 cuerpos)", basePrice: 95 },
-      { id: "sofa-l", name: "Sofá seccional en L (4-5 cuerpos)", basePrice: 140 },
-      { id: "sofa-xl", name: "Seccional grande + Chaise Longue", basePrice: 180 }
+    questionLabel: "Tipo de mueble de tela:",
+    itemTypes: [
+      { id: "sofa-1", label: "Sofá individual (1 cuerpo)" },
+      { id: "sofa-2", label: "Sofá de 2 cuerpos" },
+      { id: "sofa-3", label: "Sofá de 3 cuerpos" },
+      { id: "juego-321", label: "Juego completo 3-2-1" },
+      { id: "seccional-l", label: "Seccional en L" },
+      { id: "seccional-u", label: "Seccional en U" },
+      { id: "sofa-cama", label: "Sofá cama" },
+      { id: "otro-mueble", label: "Otro modelo de mueble" }
+    ],
+    quantityLabel: "Cantidad de asientos o piezas:",
+    specificQuestions: [
+      {
+        id: "material",
+        label: "¿Conoces el material de la tela? (Opcional)",
+        options: [
+          "No estoy seguro / Tela común",
+          "Lino",
+          "Terciopelo / Velvet",
+          "Chenille",
+          "Microfibra",
+          "Cuero sintético / Vinil"
+        ]
+      }
     ]
   },
   {
-    id: "colchon",
+    id: "muebles-cuero",
+    name: "Muebles de Cuero (Siliconado)",
+    icon: "Shield",
+    questionLabel: "Tipo de mueble de cuero a siliconar:",
+    itemTypes: [
+      { id: "cuero-1", label: "Sillón individual de cuero" },
+      { id: "cuero-2", label: "Sofá de 2 cuerpos de cuero" },
+      { id: "cuero-3", label: "Sofá de 3 cuerpos de cuero" },
+      { id: "cuero-juego", label: "Juego completo de cuero" },
+      { id: "cuero-seccional", label: "Seccional de cuero" }
+    ],
+    quantityLabel: "Cantidad de muebles a siliconar:",
+    specificQuestions: [
+      {
+        id: "aclaracion",
+        label: "Tratamiento a aplicar:",
+        options: [
+          "Siliconado y acondicionamiento protector de cuero (no lavado con agua)"
+        ]
+      }
+    ]
+  },
+  {
+    id: "colchones",
     name: "Colchones",
     icon: "Bed",
-    items: [
-      { id: "col-1", name: "Colchón de 1 a 1.5 plazas", basePrice: 55 },
-      { id: "col-2", name: "Colchón de 2 plazas", basePrice: 75 },
-      { id: "col-queen", name: "Colchón Queen Size", basePrice: 90 },
-      { id: "col-king", name: "Colchón King Size", basePrice: 110 }
+    questionLabel: "Tamaño / Número de plazas del colchón:",
+    itemTypes: [
+      { id: "cuna", label: "Cuna de bebé" },
+      { id: "col-1", label: "1 plaza o 1.5 plazas" },
+      { id: "col-2", label: "2 plazas (estándar)" },
+      { id: "col-queen", label: "Queen Size" },
+      { id: "col-king", label: "King Size" },
+      { id: "varios-col", label: "Varios colchones" }
+    ],
+    quantityLabel: "Cantidad de colchones:",
+    specificQuestions: [
+      {
+        id: "caras",
+        label: "¿Deseas lavar una o ambas caras del colchón?",
+        options: [
+          "Ambas caras (completo)",
+          "Solo 1 cara principal",
+          "A consultar según inspección"
+        ]
+      }
     ]
   },
   {
     id: "sillas",
-    name: "Sillas de Comedor",
+    name: "Sillas de Comedor y Oficina",
     icon: "Utensils",
-    items: [
-      { id: "silla-4", name: "Juego de 4 sillas tapizadas", basePrice: 50 },
-      { id: "silla-6", name: "Juego de 6 sillas tapizadas", basePrice: 75 },
-      { id: "silla-8", name: "Juego de 8 sillas tapizadas", basePrice: 95 },
-      { id: "silla-ind", name: "Silla individual / de escritorio", basePrice: 15 }
+    questionLabel: "Tipo de sillas:",
+    itemTypes: [
+      { id: "sillas-comedor", label: "Sillas de comedor" },
+      { id: "sillas-oficina", label: "Sillas de oficina / ergonómicas" },
+      { id: "sillones-ejecutivos", label: "Sillones ejecutivos o gerenciales" },
+      { id: "butacas", label: "Butacas o banquetas" }
+    ],
+    quantityLabel: "¿Cuántas sillas necesitas lavar?",
+    specificQuestions: [
+      {
+        id: "partes",
+        label: "Partes tapizadas a lavar:",
+        options: [
+          "Solo asiento tapizado",
+          "Asiento y respaldo tapizado",
+          "Tapizado integral"
+        ]
+      },
+      {
+        id: "material-silla",
+        label: "Material del tapiz (si lo conoce):",
+        options: [
+          "Tela estándar",
+          "Malla ergonómica",
+          "Terciopelo o lino",
+          "No estoy seguro"
+        ]
+      }
     ]
   },
   {
-    id: "alfombra",
+    id: "alfombras",
     name: "Alfombras",
     icon: "Layers",
-    items: [
-      { id: "alf-s", name: "Alfombra pequeña (hasta 1.5 x 1 m)", basePrice: 40 },
-      { id: "alf-m", name: "Alfombra mediana (hasta 2 x 1.5 m)", basePrice: 65 },
-      { id: "alf-l", name: "Alfombra grande de sala (hasta 3 x 2 m)", basePrice: 110 }
+    questionLabel: "Medidas aproximadas de la alfombra:",
+    itemTypes: [
+      { id: "alf-pequena", label: "Pequeña (hasta 1.5 x 1.0 m aprox.)" },
+      { id: "alf-mediana", label: "Mediana (hasta 2.0 x 1.5 m aprox.)" },
+      { id: "alf-grande", label: "Grande de sala (hasta 3.0 x 2.0 m aprox.)" },
+      { id: "alf-pasadizo", label: "Alfombra pasillera / tapete largo" },
+      { id: "alf-otra", label: "Otras medidas (indicar en detalles)" }
+    ],
+    quantityLabel: "Cantidad de alfombras:",
+    specificQuestions: [
+      {
+        id: "tipo-pelo",
+        label: "Tipo de pelo de la alfombra:",
+        options: [
+          "Pelo corto",
+          "Pelo mediano",
+          "Pelo largo / Shaggy"
+        ]
+      }
     ]
   },
   {
-    id: "auto",
-    name: "Tapicería de Autos",
+    id: "vehiculos",
+    name: "Asientos de Auto",
     icon: "Car",
-    items: [
-      { id: "auto-sedan", name: "Auto sedán (todos los asientos)", basePrice: 110 },
-      { id: "auto-suv", name: "Camioneta SUV (5 asientos)", basePrice: 140 },
-      { id: "auto-van", name: "Camioneta 3 filas (7-8 asientos)", basePrice: 180 }
+    questionLabel: "Tipo de vehículo:",
+    itemTypes: [
+      { id: "auto-sedan", label: "Auto Sedán / Hatchback" },
+      { id: "camioneta-suv", label: "Camioneta SUV (5 asientos)" },
+      { id: "camioneta-grande", label: "Camioneta de 3 filas (7-8 asientos)" },
+      { id: "camioneta-pick", label: "Camioneta Pick-up" }
+    ],
+    quantityLabel: "Cantidad de vehículos:",
+    specificQuestions: [
+      {
+        id: "asientos-lavar",
+        label: "¿Qué asientos deseas lavar?",
+        options: [
+          "Todos los asientos (filas completas)",
+          "Solo asientos delanteros",
+          "Solo asientos posteriores"
+        ]
+      }
     ]
   }
 ];
-
-export const CALCULATOR_EXTRAS = [
-  { id: "desinfeccion", name: "Tratamiento bactericida y anti-ácaros UV profundo", price: 15 },
-  { id: "mascotas", name: "Neutralizador enzimático de olores de orina / mascotas", price: 20 },
-  { id: "teflon", name: "Protector repelente de líquidos y manchas (Teflonado)", price: 35 }
-];
-

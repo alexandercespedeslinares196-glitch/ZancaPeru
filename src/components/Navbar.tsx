@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Menu, X, Phone, ShieldCheck } from 'lucide-react';
+import { MessageCircle, Menu, X, Phone, Clock } from 'lucide-react';
 import { BUSINESS_CONFIG, getWhatsAppUrl } from '../data/config';
 
 export const Navbar: React.FC = () => {
@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { label: "Servicios", href: "#servicios" },
     { label: "Resultados", href: "#resultados" },
-    { label: "Cotizador", href: "#cotizador", highlight: true },
+    { label: "Cotización", href: "#cotizador", highlight: true },
     { label: "Método", href: "#metodo" },
     { label: "Cobertura", href: "#cobertura" },
     { label: "Opiniones", href: "#opiniones" },
@@ -49,13 +49,13 @@ export const Navbar: React.FC = () => {
               <span className={`text-[10px] font-semibold tracking-wider uppercase -mt-1 ${
                 isScrolled ? "text-muted-foreground" : "text-ink-300"
               }`}>
-                Cajamarca
+                Cajamarca y Baños del Inca
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -76,28 +76,31 @@ export const Navbar: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href={`tel:${BUSINESS_CONFIG.phoneRaw}`}
+              href={`https://wa.me/${BUSINESS_CONFIG.phoneRaw}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hidden md:flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg transition-colors ${
                 isScrolled ? "text-foreground hover:bg-muted" : "text-white/90 hover:bg-white/10"
               }`}
             >
-              <Phone className="h-3.5 w-3.5 text-primary" />
+              <Phone className="h-3.5 w-3.5 text-aqua-400" />
               <span>{BUSINESS_CONFIG.phone}</span>
             </a>
 
             <a
-              href={getWhatsAppUrl("¡Hola Zanca Limpieza! 👋 Quisiera consultar sobre el servicio de limpieza a domicilio.")}
+              href={getWhatsAppUrl("Hola, Zanca Limpieza. Quisiera una cotización para lavar...")}
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-primary text-white text-sm font-bold px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-card hover:scale-105 transition-all"
+              className="bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-bold px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-card hover:scale-105 transition-all"
             >
-              <MessageCircle className="h-4 w-4" />
-              <span>Cotizar Gratis</span>
+              <MessageCircle className="h-4 w-4 fill-white" />
+              <span>Cotizar por WhatsApp</span>
             </a>
           </div>
 
           {/* Mobile Hamburger Toggle */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`lg:hidden p-2 rounded-xl border transition-colors ${
               isScrolled
@@ -113,12 +116,12 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-ink-950/80 backdrop-blur-md lg:hidden pt-24 px-6 pb-8 flex flex-col justify-between">
+        <div className="fixed inset-0 z-40 bg-ink-950/90 backdrop-blur-md lg:hidden pt-24 px-6 pb-8 flex flex-col justify-between">
           <div className="flex flex-col space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5 text-aqua-400" />
-                <span className="text-xs text-ink-300 font-medium">Servicio 100% Garantizado en Cajamarca</span>
+                <Clock className="h-4 w-4 text-aqua-400" />
+                <span className="text-xs text-ink-300 font-medium">+10 años de experiencia en Cajamarca</span>
               </div>
             </div>
 
@@ -136,7 +139,7 @@ export const Navbar: React.FC = () => {
                 <span>{link.label}</span>
                 {link.highlight && (
                   <span className="text-xs bg-brand-500/20 text-aqua-300 px-2.5 py-0.5 rounded-full border border-brand-500/30">
-                    Calcula aquí
+                    Solicitar
                   </span>
                 )}
               </a>
@@ -145,18 +148,18 @@ export const Navbar: React.FC = () => {
 
           <div className="pt-6 space-y-3">
             <a
-              href={getWhatsAppUrl("¡Hola Zanca Limpieza! Deseo agendar una limpieza a domicilio.")}
+              href={getWhatsAppUrl("Hola, Zanca Limpieza. Quisiera una cotización para lavar...")}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full gradient-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg text-center"
+              className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg text-center"
             >
-              <MessageCircle className="h-5 w-5" />
-              <span>Chatear por WhatsApp</span>
+              <MessageCircle className="h-5 w-5 fill-white" />
+              <span>Cotizar por WhatsApp</span>
             </a>
 
             <p className="text-center text-xs text-ink-400">
-              Horario: {BUSINESS_CONFIG.schedule}
+              {BUSINESS_CONFIG.phone} • Atención con cita previa
             </p>
           </div>
         </div>

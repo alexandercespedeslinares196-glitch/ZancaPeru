@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
-import { Sparkles, MoveHorizontal, CheckCircle2 } from 'lucide-react';
+import { Sparkles, MoveHorizontal, CheckCircle2, Info } from 'lucide-react';
 
 interface ComparisonItem {
   id: string;
@@ -19,27 +19,27 @@ export const BeforeAfterSlider: React.FC = () => {
   const comparisons: ComparisonItem[] = [
     {
       id: "sofa",
-      name: "Sofá de Sala",
+      name: "Muebles de Tela",
       image: "/before-after.jpg",
       beforeFilter: "sepia(0.35) saturate(0.55) brightness(0.65) contrast(1.2)",
-      details: "Eliminación de manchas oscuras, acumulación de sudor y polvo incrustado en tejido chenille.",
-      highlight: "Color original recuperado al 100%"
+      details: "Remoción profunda de acumulación de suciedad y polvo en tapicería de sala.",
+      highlight: "Limpieza profunda de fibras"
     },
     {
       id: "colchon",
-      name: "Colchón de 2 Plazas",
+      name: "Colchón",
       image: "/hero.jpg",
       beforeFilter: "sepia(0.45) saturate(0.5) brightness(0.6) contrast(1.25)",
-      details: "Extracción completa de halos amarillentos, ácaros y neutralización de olores a humedad.",
-      highlight: "Hipoalergénico y desinfectado"
+      details: "Extracción profunda de suciedad y neutralización de olores en colchón.",
+      highlight: "Cuidado higiénico del descanso"
     },
     {
       id: "silla",
       name: "Sillas de Comedor",
       image: "/before-after.jpg",
       beforeFilter: "sepia(0.5) saturate(0.6) brightness(0.6) contrast(1.3)",
-      details: "Retiro de derrames de líquidos (café, salsas) y grasa sin desgastar la tapicería delicada.",
-      highlight: "Sin cercos de agua residual"
+      details: "Limpieza focalizada de derrames y suciedad de uso diario sin dañar el tejido.",
+      highlight: "Tapizado fresco y limpio"
     }
   ];
 
@@ -79,19 +79,20 @@ export const BeforeAfterSlider: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary uppercase tracking-widest bg-primary/10 px-3.5 py-1.5 rounded-full border border-primary/20 mb-4">
             <Sparkles className="h-4 w-4" />
-            <span>Resultados Reales</span>
+            <span>Resultados Visibles</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight mb-4">
-            Antes y Después del Servicio
+            Antes y Después del Lavado
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Desliza la barra para comprobar la transformación. Resultados visibles e inmediatos que hablan por sí solos.
+            Desliza la barra para observar el cambio tras la limpieza profunda por extracción.
           </p>
 
           {/* Category Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
             {comparisons.map((item) => (
               <button
+                type="button"
                 key={item.id}
                 onClick={() => {
                   setActiveTab(item.id);
@@ -189,9 +190,14 @@ export const BeforeAfterSlider: React.FC = () => {
               ✓ {currentComparison.highlight}
             </div>
           </div>
+
+          {/* Disclaimer under slider */}
+          <div className="mt-3 text-center sm:text-left text-xs text-muted-foreground flex items-center gap-2 px-1">
+            <Info className="h-3.5 w-3.5 text-primary shrink-0" />
+            <span>Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.</span>
+          </div>
         </div>
       </div>
     </section>
   );
 };
-

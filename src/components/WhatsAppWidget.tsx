@@ -20,26 +20,27 @@ export const WhatsAppWidget: React.FC = () => {
       {isOpen && (
         <div className="pointer-events-auto mb-3 w-[310px] sm:w-[340px] bg-card rounded-2xl shadow-2xl border border-border overflow-hidden animate-float">
           {/* Header */}
-          <div className="gradient-primary p-4 text-white flex items-center justify-between">
+          <div className="bg-[#25D366] p-4 text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-black text-lg">
                   Z
                 </div>
                 {/* Online indicator */}
-                <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-400 border-2 border-white" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-white border-2 border-[#25D366]" />
               </div>
 
               <div>
                 <h4 className="font-bold text-sm leading-tight">Zanca Limpieza</h4>
-                <div className="flex items-center gap-1.5 text-[11px] text-aqua-100">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  <span>En línea para cotizaciones</span>
+                <div className="flex items-center gap-1.5 text-[11px] text-white/90">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  <span>WhatsApp Comercial</span>
                 </div>
               </div>
             </div>
 
             <button
+              type="button"
               onClick={() => {
                 setIsOpen(false);
                 setShowNotificationBadge(false);
@@ -54,11 +55,11 @@ export const WhatsAppWidget: React.FC = () => {
           {/* Body message */}
           <div className="p-4 bg-muted/30 text-xs sm:text-sm text-foreground/90 space-y-3">
             <div className="bg-card p-3.5 rounded-xl rounded-tl-none border border-border shadow-xs">
-              <p className="leading-relaxed">
-                ¡Hola! 👋 ¿Tienes manchas en tus muebles, colchones o alfombras en Cajamarca?
+              <p className="leading-relaxed font-medium">
+                ¡Hola! 👋 Lavado profesional a domicilio en Cajamarca y Baños del Inca.
               </p>
-              <p className="mt-1.5 text-xs text-muted-foreground">
-                Escríbenos y te damos presupuesto exacto y fecha de atención en minutos.
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                Envíanos una foto del artículo que deseas lavar y en qué zona te encuentras para brindarte una cotización sin compromiso.
               </p>
             </div>
           </div>
@@ -66,13 +67,13 @@ export const WhatsAppWidget: React.FC = () => {
           {/* Footer CTA */}
           <div className="p-3 bg-card border-t border-border">
             <a
-              href={getWhatsAppUrl("¡Hola Zanca Limpieza! 👋 Vi su página web y deseo consultar precios de limpieza a domicilio.")}
+              href={getWhatsAppUrl("Hola, Zanca Limpieza. Quisiera una cotización para lavar...")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full gradient-primary hover:opacity-95 text-white font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all"
+              className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all"
             >
               <Send className="h-3.5 w-3.5" />
-              <span>Chatear por WhatsApp Ahora</span>
+              <span>Cotizar por WhatsApp</span>
             </a>
           </div>
         </div>
@@ -80,6 +81,7 @@ export const WhatsAppWidget: React.FC = () => {
 
       {/* Floating Circular Action Button */}
       <button
+        type="button"
         onClick={() => {
           setIsOpen(!isOpen);
           setShowNotificationBadge(false);

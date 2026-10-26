@@ -70,7 +70,7 @@ export const Faq: React.FC = () => {
             ¿Tienes alguna otra consulta no respondida aquí?
           </p>
           <a
-            href={getWhatsAppUrl("¡Hola Zanca Limpieza! Tengo una consulta sobre el servicio.")}
+            href={getWhatsAppUrl("Hola, Zanca Limpieza. Tengo una consulta sobre el servicio.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-hover hover:underline"

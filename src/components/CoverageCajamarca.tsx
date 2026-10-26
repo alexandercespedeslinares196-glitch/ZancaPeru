@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, CheckCircle, Navigation, Clock, Shield } from 'lucide-react';
+import { MapPin, CheckCircle, Navigation, Calendar, Shield } from 'lucide-react';
 import { BUSINESS_CONFIG, getWhatsAppUrl } from '../data/config';
 
 export const CoverageCajamarca: React.FC = () => {
@@ -20,41 +20,41 @@ export const CoverageCajamarca: React.FC = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Servicio a Domicilio en Toda la Ciudad de <span className="text-gradient">Cajamarca</span>
+                Servicio a Domicilio en <span className="text-gradient">Cajamarca y Baños del Inca</span>
               </h2>
 
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                No tienes que mover tus muebles ni preocuparte por el transporte. Nuestro equipo móvil llega directamente a tu casa, departamento u oficina con todos los equipos industriales necesarios.
+                Llevamos nuestros equipos de inyección y extracción directamente hasta tu hogar, departamento u oficina previa cita agendada. No necesitas preocuparte por trasladar tus muebles.
               </p>
 
-              {/* Badges of trust */}
+              {/* Badges of service */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground bg-muted/60 p-3 rounded-xl">
                   <CheckCircle className="h-4 w-4 text-brand-600 shrink-0" />
-                  <span>Sin costo adicional de movilidad</span>
+                  <span>Servicio directo en tu domicilio</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground bg-muted/60 p-3 rounded-xl">
-                  <Clock className="h-4 w-4 text-brand-600 shrink-0" />
-                  <span>Puntualidad en la cita agendada</span>
+                  <Calendar className="h-4 w-4 text-brand-600 shrink-0" />
+                  <span>Atención con cita previa</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground bg-muted/60 p-3 rounded-xl">
                   <Shield className="h-4 w-4 text-brand-600 shrink-0" />
-                  <span>Personal uniformado e identificado</span>
+                  <span>Cuidado cuidadoso de tus espacios</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground bg-muted/60 p-3 rounded-xl">
                   <Navigation className="h-4 w-4 text-brand-600 shrink-0" />
-                  <span>Atención en casas y edificios</span>
+                  <span>Atención en casas, departamentos y locales</span>
                 </div>
               </div>
 
               <div className="pt-2">
                 <a
-                  href={getWhatsAppUrl("¡Hola Zanca Limpieza! Quisiera saber si atienden a domicilio en mi zona exacta.")}
+                  href={getWhatsAppUrl("Hola, Zanca Limpieza. Quisiera consultar sobre la atención a domicilio en mi zona.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-hover hover:underline transition-all"
                 >
-                  <span>¿Tienes dudas sobre tu dirección? Pregúntanos por WhatsApp</span>
+                  <span>¿Tienes dudas sobre tu zona? Consúltanos por WhatsApp</span>
                   <Navigation className="h-4 w-4" />
                 </a>
               </div>
@@ -64,7 +64,7 @@ export const CoverageCajamarca: React.FC = () => {
             <div className="lg:col-span-5 bg-muted/60 rounded-2xl p-6 border border-border">
               <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Barrios y Sectores Atendidos:</span>
+                <span>Zonas de Atención en Cajamarca:</span>
               </h3>
 
               <div className="flex flex-wrap gap-2">
@@ -80,7 +80,7 @@ export const CoverageCajamarca: React.FC = () => {
               </div>
 
               <div className="mt-6 p-3.5 rounded-xl bg-primary/10 border border-primary/20 text-xs text-primary font-medium text-center">
-                🚗 También atendemos casas de campo, hoteles y empresas turísticas en la campiña cajamarquina.
+                🏠 Servicio a domicilio en Cajamarca y Baños del Inca. Atención con cita previa.
               </div>
             </div>
           </div>
@@ -89,4 +89,3 @@ export const CoverageCajamarca: React.FC = () => {
     </section>
   );
 };
-

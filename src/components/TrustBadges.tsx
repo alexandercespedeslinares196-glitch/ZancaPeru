@@ -1,31 +1,31 @@
 import React from 'react';
-import { Sparkles, Smile, ShieldCheck, MapPin } from 'lucide-react';
+import { Sparkles, MapPin, Leaf, Clock } from 'lucide-react';
 
 export const TrustBadges: React.FC = () => {
-  const stats = [
+  const highlights = [
     {
-      icon: Sparkles,
-      value: "+1,850",
-      title: "Muebles Renovados",
-      desc: "Colchones, alfombras, sofás y sillas dejados como nuevos en Cajamarca."
-    },
-    {
-      icon: Smile,
-      value: "99.4%",
-      title: "Clientes Satisfechos",
-      desc: "Garantía total: si no quedas 100% conforme, repetimos el servicio."
-    },
-    {
-      icon: ShieldCheck,
-      value: "100% Seguro",
-      title: "Bio & Hipoalergénico",
-      desc: "Productos biodegradables no dañinos para niños ni mascotas."
+      icon: Clock,
+      value: "+10 Años",
+      title: "Experiencia en Cajamarca",
+      desc: "Más de una década brindando cuidado y limpieza especializada a tus muebles."
     },
     {
       icon: MapPin,
       value: "A Domicilio",
-      title: "Todo Cajamarca",
-      desc: "Llevamos nuestros equipos industriales hasta la puerta de tu casa."
+      title: "Cajamarca y Baños del Inca",
+      desc: "Atención directa en tu hogar u oficina con cita previa coordinada."
+    },
+    {
+      icon: Sparkles,
+      value: "Extracción",
+      title: "Limpieza Profunda",
+      desc: "Lavado por inyección y succión de alta potencia para remover suciedad acumulada."
+    },
+    {
+      icon: Leaf,
+      value: "Ecológicos",
+      title: "Productos Biodegradables",
+      desc: "Insumos seleccionados para el cuidado de los textiles y el entorno familiar."
     }
   ];
 
@@ -33,7 +33,7 @@ export const TrustBadges: React.FC = () => {
     <section className="relative -mt-8 z-20 container mx-auto px-4">
       <div className="bg-card rounded-2xl shadow-floating border border-border/80 p-6 sm:p-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-border/60">
-          {stats.map((item, index) => {
+          {highlights.map((item, index) => {
             const IconComponent = item.icon;
             return (
               <div
@@ -62,4 +62,3 @@ export const TrustBadges: React.FC = () => {
     </section>
   );
 };
-

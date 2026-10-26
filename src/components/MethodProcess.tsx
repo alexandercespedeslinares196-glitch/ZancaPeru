@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CalendarCheck, Truck, Sparkles, Search, Wind, Activity, Sun, ShieldCheck } from 'lucide-react';
+import { CalendarCheck, Truck, Sparkles, Search, Wind, Activity, Sun, Info } from 'lucide-react';
 import { METHOD_STEPS } from '../data/content';
 import { getWhatsAppUrl } from '../data/config';
 
@@ -9,20 +9,20 @@ export const MethodProcess: React.FC = () => {
   const bookingSteps = [
     {
       step: "01",
-      title: "Agenda tu cita",
-      description: "Contáctanos por WhatsApp o mediante nuestro formulario web. Te respondemos en minutos para coordinar el horario más cómodo para ti.",
+      title: "Solicita tu cotización",
+      description: "Contáctanos por WhatsApp o formulario web enviándonos fotos y detalles de tus muebles. Te confirmamos el presupuesto y coordinamos la fecha.",
       icon: CalendarCheck
     },
     {
       step: "02",
-      title: "Limpieza a domicilio",
-      description: "Nuestro equipo certificado llega puntualmente a tu hogar u oficina en Cajamarca con todo el equipo profesional e insumos necesarios.",
+      title: "Atención a domicilio con cita previa",
+      description: "Llegamos en la fecha y hora programada a tu domicilio en Cajamarca o Baños del Inca con los equipos de extracción y productos ecológicos.",
       icon: Truck
     },
     {
       step: "03",
-      title: "Disfruta un ambiente sano",
-      description: "Tus muebles quedan renovados, libres del 99.9% de ácaros, bacterias y malos olores. ¡Listos para usar en solo un par de horas con garantía total!",
+      title: "Limpieza y cuidado especializado",
+      description: "Lavado profundo por inyección y succión según el material. En colchones toma aprox. 1 a 2 horas de lavado; en alfombras 3 a 5 días hábiles con recojo y entrega.",
       icon: Sparkles
     }
   ];
@@ -42,7 +42,7 @@ export const MethodProcess: React.FC = () => {
     <section id="metodo" className="py-24 bg-card relative">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="text-xs sm:text-sm font-bold text-primary uppercase tracking-widest bg-primary/10 px-3.5 py-1.5 rounded-full border border-primary/20">
             Proceso Transparente
           </span>
@@ -50,12 +50,13 @@ export const MethodProcess: React.FC = () => {
             ¿Cómo Trabajamos en Zanca Limpieza?
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Un servicio ágil, confiable y con la máxima tecnología de inyección-extracción profunda para cuidar la salud de tu familia.
+            Metodología profesional de inyección y extracción profunda para el cuidado responsable de tus tapicerías.
           </p>
 
           {/* Toggle Tab */}
           <div className="inline-flex p-1.5 rounded-2xl bg-muted mt-8 border border-border">
             <button
+              type="button"
               onClick={() => setViewTab('booking')}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 viewTab === 'booking'
@@ -63,9 +64,10 @@ export const MethodProcess: React.FC = () => {
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
-              3 Simples Pasos para Agendar
+              3 Pasos para tu Servicio
             </button>
             <button
+              type="button"
               onClick={() => setViewTab('technology')}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 viewTab === 'technology'
@@ -78,9 +80,17 @@ export const MethodProcess: React.FC = () => {
           </div>
         </div>
 
-        {/* View 1: 3 Steps for Booking (Exact replica of original #proceso) */}
+        {/* Results Disclaimer Banner */}
+        <div className="max-w-4xl mx-auto mb-10 bg-muted/70 border border-border rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 text-foreground/90">
+          <Info className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+          <p className="text-xs sm:text-sm leading-relaxed">
+            <strong>Explicación de resultados:</strong> Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.
+          </p>
+        </div>
+
+        {/* View 1: 3 Steps for Booking */}
         {viewTab === 'booking' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {bookingSteps.map((item, index) => {
               const IconComp = item.icon;
               return (
@@ -115,7 +125,7 @@ export const MethodProcess: React.FC = () => {
 
         {/* View 2: 5 Steps of deep technological cleaning */}
         {viewTab === 'technology' && (
-          <div className="max-w-4xl mx-auto mt-8 space-y-4">
+          <div className="max-w-4xl mx-auto space-y-4">
             {METHOD_STEPS.map((step) => (
               <div
                 key={step.step}
@@ -135,9 +145,6 @@ export const MethodProcess: React.FC = () => {
                     {step.description}
                   </p>
                 </div>
-                <div className="shrink-0 hidden sm:block">
-                  <ShieldCheck className="h-6 w-6 text-brand-500/50" />
-                </div>
               </div>
             ))}
           </div>
@@ -146,17 +153,16 @@ export const MethodProcess: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <a
-            href={getWhatsAppUrl("¡Hola Zanca Limpieza! 👋 Quiero agendar mi servicio de limpieza a domicilio.")}
+            href={getWhatsAppUrl("Hola, Zanca Limpieza. Quisiera una cotización para lavar...")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 gradient-primary text-white font-bold px-8 py-3.5 rounded-xl shadow-card hover:scale-105 transition-transform"
           >
             <Sparkles className="h-5 w-5" />
-            <span>Agendar Cita en Cajamarca Ahora</span>
+            <span>Coordinar Cita a Domicilio por WhatsApp</span>
           </a>
         </div>
       </div>
     </section>
   );
 };
-
