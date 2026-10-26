@@ -30,9 +30,9 @@ export const TrustBadges: React.FC = () => {
   ];
 
   return (
-    <section className="relative -mt-8 z-20 container mx-auto px-4">
-      <div className="bg-card rounded-2xl shadow-floating border border-border/80 p-6 sm:p-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-border/60">
+    <section className="relative -mt-10 z-20 container mx-auto px-4">
+      <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
           {highlights.map((item, index) => {
             const IconComponent = item.icon;
             return (
@@ -42,16 +42,16 @@ export const TrustBadges: React.FC = () => {
                   index > 0 ? "pt-6 sm:pt-0 sm:pl-6" : ""
                 }`}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-3">
+                <div className="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-3 shadow-sm border border-cyan-100">
                   <IconComponent className="h-6 w-6" />
                 </div>
-                <span className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+                <span className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                   {item.value}
                 </span>
-                <h4 className="text-sm font-bold text-foreground mt-1 mb-1">
+                <h4 className="text-sm font-bold text-slate-900 mt-1 mb-1">
                   {item.title}
                 </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   {item.desc}
                 </p>
               </div>

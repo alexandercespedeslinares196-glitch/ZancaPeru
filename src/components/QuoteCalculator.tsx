@@ -330,55 +330,55 @@ export const QuoteCalculator: React.FC = () => {
             </div>
 
             {/* Summary & Next Steps (Right - 5 cols) */}
-            <div className="lg:col-span-5 bg-gradient-to-b from-ink-900 to-ink-950 rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg">
+            <div className="lg:col-span-5 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 rounded-2xl p-6 text-white flex flex-col justify-between shadow-xl border border-slate-800">
               <div>
-                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-aqua-400" />
-                    <h3 className="font-bold text-base">Resumen de tu Solicitud</h3>
+                    <Sparkles className="h-5 w-5 text-cyan-400" />
+                    <h3 className="font-bold text-base text-white">Resumen de tu Solicitud</h3>
                   </div>
-                  <span className="text-[11px] bg-white/10 text-aqua-300 font-bold px-2.5 py-1 rounded-full border border-white/10">
+                  <span className="text-[11px] bg-cyan-500/20 text-cyan-300 font-bold px-2.5 py-1 rounded-full border border-cyan-400/30">
                     A Domicilio
                   </span>
                 </div>
 
-                <div className="space-y-3.5 text-xs sm:text-sm text-ink-300 mb-6">
+                <div className="space-y-4 text-xs sm:text-sm mb-6">
                   <div>
-                    <span className="text-ink-400 block text-[11px] uppercase tracking-wider">Servicio:</span>
-                    <span className="font-semibold text-white">{currentCategory.name}</span>
+                    <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold">Servicio:</span>
+                    <span className="font-bold text-white text-sm">{currentCategory.name}</span>
                   </div>
 
                   <div>
-                    <span className="text-ink-400 block text-[11px] uppercase tracking-wider">Detalle:</span>
-                    <span className="font-semibold text-white">{currentItemLabel} (x{quantity})</span>
+                    <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold">Detalle:</span>
+                    <span className="font-bold text-white text-sm">{currentItemLabel} (x{quantity})</span>
                   </div>
 
                   <div>
-                    <span className="text-ink-400 block text-[11px] uppercase tracking-wider">Zona de atención:</span>
-                    <span className="font-medium text-white">{zone}</span>
+                    <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold">Zona de atención:</span>
+                    <span className="font-medium text-slate-100">{zone}</span>
                   </div>
 
                   {preferredDate && (
                     <div>
-                      <span className="text-ink-400 block text-[11px] uppercase tracking-wider">Fecha preferida:</span>
-                      <span className="font-medium text-aqua-300">{preferredDate} (sujeta a confirmación)</span>
+                      <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold">Fecha preferida:</span>
+                      <span className="font-medium text-cyan-300">{preferredDate} (sujeta a confirmación)</span>
                     </div>
                   )}
 
                   {includePerfuming && (
-                    <div className="text-xs text-aqua-300 bg-aqua-400/10 p-2 rounded-lg border border-aqua-400/20">
+                    <div className="text-xs text-cyan-300 bg-cyan-500/10 p-2.5 rounded-lg border border-cyan-400/30 font-medium">
                       ✨ Con perfumado opcional solicitado
                     </div>
                   )}
                 </div>
 
                 {/* Important Notice regarding pricing and photos */}
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10 mb-6 space-y-2">
-                  <div className="flex items-center gap-2 text-aqua-300 font-bold text-xs uppercase tracking-wider">
+                <div className="p-4 rounded-xl bg-slate-800/80 border border-slate-700/80 mb-6 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-300 font-bold text-xs uppercase tracking-wider">
                     <Camera className="h-4 w-4" />
                     <span>Envío de fotos requerido</span>
                   </div>
-                  <p className="text-xs text-ink-300 leading-relaxed">
+                  <p className="text-xs text-slate-200 leading-relaxed font-normal">
                     El equipo de Zanca Limpieza confirma el precio exacto tras revisar el artículo y sus fotos por WhatsApp.
                   </p>
                 </div>
@@ -389,19 +389,19 @@ export const QuoteCalculator: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleSendQuoteRequest}
-                  className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-extrabold py-4 px-4 rounded-xl text-base flex items-center justify-center gap-2.5 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-black py-4 px-4 rounded-xl text-base flex items-center justify-center gap-2.5 shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   <MessageCircle className="h-5 w-5 fill-white" />
                   <span>Solicitar mi cotización</span>
                 </button>
 
-                <p className="text-[11px] text-ink-400 text-center flex items-center justify-center gap-1">
-                  <Info className="h-3 w-3 text-aqua-400 shrink-0" />
+                <p className="text-[11px] text-slate-300 text-center flex items-center justify-center gap-1 font-medium">
+                  <Info className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
                   <span>Atención con cita previa. Cotización gratis y sin compromiso.</span>
                 </p>
 
                 {submitted && (
-                  <div className="p-3 bg-brand-500/20 border border-brand-500/40 rounded-xl text-center text-xs text-white">
+                  <div className="p-3 bg-emerald-500/20 border border-emerald-500/40 rounded-xl text-center text-xs text-white font-semibold">
                     ✅ ¡WhatsApp abierto! Recuerda adjuntar una foto del artículo para recibir tu presupuesto.
                   </div>
                 )}
