@@ -64,18 +64,28 @@ export const CoverageCajamarca: React.FC = () => {
             <div className="lg:col-span-5 bg-muted/60 rounded-2xl p-6 border border-border">
               <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Zonas de Atención en Cajamarca:</span>
+                <span>Zonas de atención:</span>
               </h3>
 
-              <div className="flex flex-wrap gap-2">
-                {BUSINESS_CONFIG.zones.map((zone) => (
-                  <span
-                    key={zone}
-                    className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-card text-foreground border border-border/80 shadow-xs flex items-center gap-1.5 hover:border-primary/50 transition-colors"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {zone}
-                  </span>
+              <div className="space-y-4">
+                {BUSINESS_CONFIG.zoneGroups.map((g) => (
+                  <div key={g.label}>
+                    <h4 className="text-xs font-bold text-foreground mb-2 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      {g.label}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {g.zones.map((zone) => (
+                        <span
+                          key={zone}
+                          className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-card text-foreground border border-border/80 shadow-xs flex items-center gap-1.5 hover:border-primary/50 transition-colors"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          {zone}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
 

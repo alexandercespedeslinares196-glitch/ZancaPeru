@@ -282,8 +282,12 @@ export const QuoteCalculator: React.FC = () => {
                     onChange={e => setZone(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-xl border border-input bg-background text-foreground text-sm focus:ring-2 focus:ring-primary focus:outline-none"
                   >
-                    {BUSINESS_CONFIG.zones.map(z => (
-                      <option key={z} value={z}>{z}</option>
+                    {BUSINESS_CONFIG.zoneGroups.map(g => (
+                      <optgroup key={g.label} label={g.label}>
+                        {g.zones.map(z => (
+                          <option key={z} value={`${g.prefix}${z}`}>{z}</option>
+                        ))}
+                      </optgroup>
                     ))}
                   </select>
                   <span className="text-[11px] text-muted-foreground block mt-1">

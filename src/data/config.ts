@@ -38,34 +38,74 @@ export const BUSINESS_CONFIG = {
     alfombras: "Aproximadamente de 3 a 5 días hábiles, incluido recojo y entrega a domicilio."
   },
 
-  // Zonas de cobertura: 24 sectores urbanos de Cajamarca según el PDU,
-  // más Baños del Inca (distrito aparte que también se atiende)
-  zones: [
-    "San Sebastián",
-    "San José",
-    "San Pedro",
-    "Cumbe Mayo",
-    "Pueblo Nuevo",
-    "Chontapaccha",
-    "La Colmena",
-    "La Merced",
-    "Pueblo Libre",
-    "San Antonio",
-    "Las Torrecitas",
-    "Santa Elena",
-    "San Martín",
-    "Mollepampa",
-    "San Vicente",
-    "El Estanco",
-    "Lucmacucho",
-    "La Florida",
-    "Nuevo Cajamarca",
-    "Urubamba",
-    "La Tulpuna",
-    "Samana Cruz",
-    "La Paccha",
-    "Villa Huacariz",
-    "Baños del Inca"
+  // Zonas de cobertura (solo como referencia: en el formulario se piden
+  // la dirección exacta y una referencia). Cajamarca: 24 sectores urbanos
+  // según el PDU. Baños del Inca: centro, centros poblados y caseríos.
+  zoneGroups: [
+    {
+      label: "Cajamarca",
+      prefix: "",
+      zones: [
+        "San Sebastián",
+        "San José",
+        "San Pedro",
+        "Cumbe Mayo",
+        "Pueblo Nuevo",
+        "Chontapaccha",
+        "La Colmena",
+        "La Merced",
+        "Pueblo Libre",
+        "San Antonio",
+        "Las Torrecitas",
+        "Santa Elena",
+        "San Martín",
+        "Mollepampa",
+        "San Vicente",
+        "El Estanco",
+        "Lucmacucho",
+        "La Florida",
+        "Nuevo Cajamarca",
+        "Urubamba",
+        "La Tulpuna",
+        "Samana Cruz",
+        "La Paccha",
+        "Villa Huacariz"
+      ]
+    },
+    {
+      label: "Baños del Inca",
+      prefix: "Baños del Inca — ",
+      zones: [
+        "Centro (plaza principal y Complejo Turístico)",
+        "Otuzco",
+        "Santa Bárbara",
+        "Huacataz",
+        "Tartar Chico",
+        "Puylucana",
+        "Apalín",
+        "El Cerrillo",
+        "Bajo Otuzco",
+        "Alto Otuzco",
+        "La Colpa Otuzco",
+        "Quinuapata",
+        "Cristo Rey",
+        "Shitaloma",
+        "Shaullo Chico",
+        "Huayrapongo",
+        "Chaquilpampa",
+        "Quinuayoc",
+        "Manzanamayo",
+        "Hornuyoc",
+        "Shahuarpampa",
+        "Laparpampa",
+        "Muyoc",
+        "Chupicaloma",
+        "Shinshilpampa",
+        "Chicospata",
+        "Barrojo",
+        "Chuquilín"
+      ]
+    }
   ]
 };
 

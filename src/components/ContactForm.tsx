@@ -9,6 +9,8 @@ export const ContactForm: React.FC = () => {
     cantidad: '1',
     material: '',
     zona: 'San Sebastián',
+    direccion: '',
+    referencia: '',
     estado: ''
   });
 
@@ -25,6 +27,8 @@ export const ContactForm: React.FC = () => {
       text += `🧵 *Material:* ${formData.material}\n`;
     }
     text += `📍 *Zona:* ${formData.zona}\n`;
+    text += `🏠 *Dirección exacta:* ${formData.direccion}\n`;
+    text += `📌 *Referencia:* ${formData.referencia}\n`;
     if (formData.estado) {
       text += `📝 *Estado / Manchas:* ${formData.estado}\n`;
     }
@@ -43,6 +47,8 @@ export const ContactForm: React.FC = () => {
         cantidad: '1',
         material: '',
         zona: 'San Sebastián',
+        direccion: '',
+        referencia: '',
         estado: ''
       });
     }, 7000);
@@ -232,11 +238,50 @@ export const ContactForm: React.FC = () => {
                       onChange={e => setFormData({ ...formData, zona: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary transition"
                     >
-                      {BUSINESS_CONFIG.zones.map(z => (
-                        <option key={z} value={z}>{z}</option>
+                      {BUSINESS_CONFIG.zoneGroups.map(g => (
+                        <optgroup key={g.label} label={g.label}>
+                          {g.zones.map(z => (
+                            <option key={z} value={`${g.prefix}${z}`}>{z}</option>
+                          ))}
+                        </optgroup>
                       ))}
                     </select>
+                    <span className="text-[11px] text-muted-foreground block mt-1">
+                      Solo como referencia; la dirección exacta va abajo.
+                    </span>
                   </div>
+                </div>
+
+                {/* Dirección exacta y referencia */}
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
+                    Dirección exacta *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.direccion}
+                    onChange={e => setFormData({ ...formData, direccion: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary transition"
+                    placeholder="Ej. Jr. Amazonas 420, 2do piso"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
+                    Referencia *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.referencia}
+                    onChange={e => setFormData({ ...formData, referencia: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary transition"
+                    placeholder="Ej. Frente al parque, a dos cuadras de la iglesia, casa de reja azul"
+                  />
+                  <span className="text-[11px] text-muted-foreground block mt-1">
+                    Algo que nos ayude a ubicar tu casa sin perdernos.
+                  </span>
                 </div>
 
                 {/* Condition details */}
