@@ -37,9 +37,7 @@ export const Navbar: React.FC = () => {
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6">
           {/* Logo — Zanca | Limpieza */}
           <a href="#" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <span className="text-white font-black text-lg leading-none">Z</span>
-            </div>
+            <img src="/logo-gota.png" alt="Zanca Limpieza" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform drop-shadow-md" />
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className={`text-lg sm:text-xl font-black tracking-tight ${isScrolled ? "text-slate-900" : "text-white"}`}>

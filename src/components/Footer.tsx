@@ -14,9 +14,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Presentation (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl gradient-primary flex items-center justify-center shadow-md">
-                <span className="text-white font-black text-base leading-none">Z</span>
-              </div>
+              <img src="/logo-gota.png" alt="Zanca Limpieza" className="w-9 h-9 object-contain" />
               <div className="flex items-center gap-1.5">
                 <span className="text-xl font-black tracking-tight text-white">Zanca</span>
                 <span className="text-white/40 text-sm font-bold">|</span>
