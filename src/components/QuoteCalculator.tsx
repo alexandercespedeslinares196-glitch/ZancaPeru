@@ -26,7 +26,10 @@ export const QuoteCalculator: React.FC = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [specificAnswers, setSpecificAnswers] = useState<Record<string, string>>({});
   const [conditionDetails, setConditionDetails] = useState<string>("");
-  const [zone, setZone] = useState<string>("Cajamarca (Centro Histórico)");
+  const [zone, setZone] = useState<string>("San Sebastián");
+  const [address, setAddress] = useState<string>("");
+  const [reference, setReference] = useState<string>("");
+  const [formError, setFormError] = useState<string>("");
   const [preferredDate, setPreferredDate] = useState<string>("");
   const [submitted, setSubmitted] = useState<boolean>(false);
 
@@ -62,6 +65,12 @@ export const QuoteCalculator: React.FC = () => {
   const handleSendQuoteRequest = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
 
+    if (!address.trim() || !reference.trim()) {
+      setFormError("Por favor escribe tu dirección exacta y una referencia para poder llegar a tu casa.");
+      return;
+    }
+    setFormError("");
+
     let msg = `Hola, Zanca Limpieza. Quisiera una cotización para lavar:\n\n`;
     msg += `📋 *Servicio:* ${currentCategory.name}\n`;
     msg += `🛋️ *Detalle / Tipo:* ${currentItemLabel}\n`;
@@ -82,6 +91,8 @@ export const QuoteCalculator: React.FC = () => {
     }
 
     msg += `📍 *Zona:* ${zone}\n`;
+    msg += `🏠 *Dirección exacta:* ${address.trim()}\n`;
+    msg += `📌 *Referencia:* ${reference.trim()}\n`;
 
     if (preferredDate) {
       msg += `📅 *Fecha de preferencia:* ${preferredDate} (a confirmar disponibilidad)\n`;
@@ -275,6 +286,9 @@ export const QuoteCalculator: React.FC = () => {
                       <option key={z} value={z}>{z}</option>
                     ))}
                   </select>
+                  <span className="text-[11px] text-muted-foreground block mt-1">
+                    Solo como referencia; la dirección exacta va abajo.
+                  </span>
                 </div>
 
                 <div>
@@ -292,6 +306,36 @@ export const QuoteCalculator: React.FC = () => {
                     *Preferencia del cliente. Confirmaremos disponibilidad de día y hora.
                   </span>
                 </div>
+              </div>
+
+              {/* Dirección exacta y referencia */}
+              <div>
+                <label className="block text-sm font-bold text-foreground mb-1.5">
+                  Dirección exacta: <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={address}
+                  onChange={e => { setAddress(e.target.value); if (formError) setFormError(""); }}
+                  placeholder="Ej: Jr. Amazonas 420, 2do piso"
+                  className="w-full px-4 py-2.5 rounded-xl border border-input bg-background text-foreground text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-foreground mb-1.5">
+                  Referencia: <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={reference}
+                  onChange={e => { setReference(e.target.value); if (formError) setFormError(""); }}
+                  placeholder="Ej: Frente al parque, a dos cuadras de la iglesia, casa de reja azul"
+                  className="w-full px-4 py-2.5 rounded-xl border border-input bg-background text-foreground text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+                />
+                <span className="text-[11px] text-muted-foreground block mt-1">
+                  Algo que nos ayude a ubicar tu casa sin perdernos.
+                </span>
               </div>
 
               {/* Perfumado de regalo incluido */}
@@ -342,6 +386,20 @@ export const QuoteCalculator: React.FC = () => {
                     <span className="font-medium text-slate-100">{zone}</span>
                   </div>
 
+                  {address.trim() && (
+                    <div>
+                      <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold">Dirección:</span>
+                      <span className="font-medium text-slate-100">{address}</span>
+                    </div>
+                  )}
+
+                  {reference.trim() && (
+                    <div>
+                      <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold">Referencia:</span>
+                      <span className="font-medium text-slate-100">{reference}</span>
+                    </div>
+                  )}
+
                   {preferredDate && (
                     <div>
                       <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold">Fecha preferida:</span>
@@ -368,6 +426,11 @@ export const QuoteCalculator: React.FC = () => {
 
               {/* Action Button */}
               <div className="space-y-3 pt-2">
+                {formError && (
+                  <div className="p-3 bg-red-500/20 border border-red-500/40 rounded-xl text-center text-xs text-white font-semibold">
+                    {formError}
+                  </div>
+                )}
                 <button
                   type="button"
                   onClick={handleSendQuoteRequest}

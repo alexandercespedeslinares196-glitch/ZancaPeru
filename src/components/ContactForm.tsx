@@ -8,7 +8,7 @@ export const ContactForm: React.FC = () => {
     servicio: 'Muebles de tela',
     cantidad: '1',
     material: '',
-    zona: 'Cajamarca (Centro Histórico)',
+    zona: 'San Sebastián',
     estado: ''
   });
 
@@ -42,7 +42,7 @@ export const ContactForm: React.FC = () => {
         servicio: 'Muebles de tela',
         cantidad: '1',
         material: '',
-        zona: 'Cajamarca (Centro Histórico)',
+        zona: 'San Sebastián',
         estado: ''
       });
     }, 7000);

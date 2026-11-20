@@ -38,22 +38,34 @@ export const BUSINESS_CONFIG = {
     alfombras: "Aproximadamente de 3 a 5 días hábiles, incluido recojo y entrega a domicilio."
   },
 
-  // Zonas de cobertura
+  // Zonas de cobertura: 24 sectores urbanos de Cajamarca según el PDU,
+  // más Baños del Inca (distrito aparte que también se atiende)
   zones: [
-    "Cajamarca (Centro Histórico)",
-    "Baños del Inca",
     "San Sebastián",
+    "San José",
+    "San Pedro",
+    "Cumbe Mayo",
+    "Pueblo Nuevo",
     "Chontapaccha",
-    "Magna Vallejo",
-    "Mollepampa",
-    "Santa Apolonia",
+    "La Colmena",
+    "La Merced",
     "Pueblo Libre",
-    "Urb. Ramón Castilla",
-    "Urb. Santa Rosa",
-    "Torora",
-    "Bellavista",
-    "Huambocancha",
-    "Casas de campo / Campiña"
+    "San Antonio",
+    "Las Torrecitas",
+    "Santa Elena",
+    "San Martín",
+    "Mollepampa",
+    "San Vicente",
+    "El Estanco",
+    "Lucmacucho",
+    "La Florida",
+    "Nuevo Cajamarca",
+    "Urubamba",
+    "La Tulpuna",
+    "Samana Cruz",
+    "La Paccha",
+    "Villa Huacariz",
+    "Baños del Inca"
   ]
 };
 
