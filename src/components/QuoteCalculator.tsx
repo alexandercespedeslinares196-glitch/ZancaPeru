@@ -28,7 +28,6 @@ export const QuoteCalculator: React.FC = () => {
   const [conditionDetails, setConditionDetails] = useState<string>("");
   const [zone, setZone] = useState<string>("Cajamarca (Centro Histórico)");
   const [preferredDate, setPreferredDate] = useState<string>("");
-  const [includePerfuming, setIncludePerfuming] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   // Current category configuration
@@ -86,10 +85,6 @@ export const QuoteCalculator: React.FC = () => {
 
     if (preferredDate) {
       msg += `📅 *Fecha de preferencia:* ${preferredDate} (a confirmar disponibilidad)\n`;
-    }
-
-    if (includePerfuming) {
-      msg += `✨ *Extra opcional:* Deseo incluir perfumado\n`;
     }
 
     msg += `\n📸 *Adjunto fotos del artículo a continuación para la confirmación de la cotización.*`;
@@ -299,32 +294,21 @@ export const QuoteCalculator: React.FC = () => {
                 </div>
               </div>
 
-              {/* Extra Optional: Perfuming */}
-              <div
-                onClick={() => setIncludePerfuming(!includePerfuming)}
-                className={`p-3.5 rounded-xl border cursor-pointer flex items-center justify-between text-xs sm:text-sm transition-all ${
-                  includePerfuming
-                    ? 'border-primary bg-primary/5 ring-1 ring-primary'
-                    : 'border-border bg-background hover:bg-muted/30'
-                }`}
-              >
+              {/* Perfumado de regalo incluido */}
+              <div className="p-3.5 rounded-xl border border-primary/30 bg-primary/5 flex items-center justify-between text-xs sm:text-sm">
                 <div className="flex items-center gap-3">
-                  <div className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 ${
-                    includePerfuming ? 'border-primary bg-primary text-white' : 'border-muted-foreground/40'
-                  }`}>
-                    {includePerfuming && <Check className="h-3 w-3 stroke-[3]" />}
-                  </div>
+                  <Sparkles className="h-5 w-5 text-primary shrink-0" />
                   <div>
                     <span className="font-semibold text-foreground block">
-                      Incluir perfumado opcional
+                      Perfumado suave de regalo incluido
                     </span>
                     <span className="text-xs text-muted-foreground">
-                      Aroma y frescura agradable para después de la limpieza.
+                      Al terminar tu servicio dejamos un perfumado suave de regalo, sin costo adicional.
                     </span>
                   </div>
                 </div>
                 <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded-md shrink-0">
-                  Opcional
+                  De regalo
                 </span>
               </div>
             </div>
@@ -365,11 +349,9 @@ export const QuoteCalculator: React.FC = () => {
                     </div>
                   )}
 
-                  {includePerfuming && (
-                    <div className="text-xs text-cyan-300 bg-cyan-500/10 p-2.5 rounded-lg border border-cyan-400/30 font-medium">
-                      ✨ Con perfumado opcional solicitado
-                    </div>
-                  )}
+                  <div className="text-xs text-cyan-300 bg-cyan-500/10 p-2.5 rounded-lg border border-cyan-400/30 font-medium">
+                    ✨ Perfumado suave de regalo incluido
+                  </div>
                 </div>
 
                 {/* Important Notice regarding pricing and photos */}

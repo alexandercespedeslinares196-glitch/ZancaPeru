@@ -6,6 +6,7 @@ export interface ServiceItem {
   tag: string;
   features: string[];
   icon: string;
+  image: string;
   popular?: boolean;
 }
 
@@ -24,6 +25,7 @@ export const SERVICES: ServiceItem[] = [
       "Productos ecológicos que cuidan la fibra"
     ],
     icon: "Armchair",
+    image: "/servicios/muebles.jpg",
     popular: true
   },
   {
@@ -39,6 +41,7 @@ export const SERVICES: ServiceItem[] = [
       "Tiempo de lavado: aprox. 1 a 2 horas (tiempo de lavado, no de secado)"
     ],
     icon: "Bed",
+    image: "/servicios/colchones.jpg",
     popular: true
   },
   {
@@ -53,7 +56,8 @@ export const SERVICES: ServiceItem[] = [
       "Remoción de suciedad acumulada y manchas",
       "Atención para hogares, oficinas y consultorios"
     ],
-    icon: "Utensils"
+    icon: "Utensils",
+    image: "/servicios/sillas.jpg"
   },
   {
     id: "alfombras",
@@ -67,7 +71,8 @@ export const SERVICES: ServiceItem[] = [
       "Tiempo de entrega: aprox. 3 a 5 días hábiles",
       "Incluye servicio de recojo y entrega a domicilio"
     ],
-    icon: "Layers"
+    icon: "Layers",
+    image: "/servicios/alfombras.jpg"
   },
   {
     id: "vehiculos",
@@ -76,12 +81,13 @@ export const SERVICES: ServiceItem[] = [
     description: "Limpieza profunda de tapicería de asientos para autos sedán, camionetas y SUV directamente a tu domicilio.",
     tag: "Automotriz",
     features: [
-      "Vehículos sedán, camionetas y camionetas SUV",
+      "Vehículos sedán, camionetas y SUV",
       "Limpieza de asientos delanteros y posteriores",
       "Extracción de polvo, suciedad y manchas",
       "Atención a domicilio en tu cochera con cita previa"
     ],
-    icon: "Car"
+    icon: "Car",
+    image: "/servicios/vehiculos.jpg"
   },
   {
     id: "muebles-cuero",
@@ -95,7 +101,8 @@ export const SERVICES: ServiceItem[] = [
       "Devuelve el brillo y la suavidad al material",
       "No se realiza lavado con agua para proteger el cuero"
     ],
-    icon: "Shield"
+    icon: "Shield",
+    image: "/servicios/cuero.jpg"
   }
 ];
 
@@ -126,8 +133,8 @@ export const METHOD_STEPS = [
   },
   {
     step: "05",
-    title: "Perfumado Opcional y Secado",
-    description: "Opcionalmente aplicamos perfumado para dejar una agradable sensación de frescura. El secado se completa de forma natural según el ambiente.",
+    title: "Perfumado de regalo y secado",
+    description: "Aplicamos un perfumado suave de regalo para dejar una agradable sensación de frescura. El secado se completa de forma natural según el ambiente.",
     icon: "Sun"
   }
 ];
@@ -162,7 +169,7 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "¿Cuánto tiempo toma el servicio de lavado?",
-    a: "En colchones, el lavado toma aproximadamente de 1 a 2 horas (este tiempo corresponde estrictamente al lavado, no al secado). En alfombras, el proceso completo con recojo, lavado profundo y entrega toma aproximadamente de 3 a 5 días hábiles."
+    a: "En colchones, el lavado toma aproximadamente de 1 a 2 horas (este tiempo corresponde estrictamente al lavado, no al secado). En muebles, el lavado toma aprox. 2 a 3 horas, y en un sillón de un solo asiento, entre 30 minutos y 1 hora. En sillas de comedor, aprox. 2 horas. En alfombras, el proceso completo con recojo, lavado profundo y entrega toma aproximadamente de 3 a 5 días hábiles. El tiempo exacto depende del servicio y del estado en que esté el artículo: si está muy sucio, el trabajo es mayor y toma un poquito más."
   },
   {
     q: "¿Cuánto tarda en secar el mueble o colchón?",
@@ -170,7 +177,7 @@ export const FAQS = [
   },
   {
     q: "¿Salen todas las manchas al 100%?",
-    a: "Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente con otros productos pueden no desaparecer por completo, aunque siempre buscamos el mejor resultado posible cuidando la tela."
+    a: "Las manchas se atenúan entre un 50% y un 90% según el caso, nunca al 100%, porque depende de lo percudido que esté el artículo y de si se intentó limpiar en casa. Lo que sí te garantizamos al 100% es la desinfección. Siempre buscamos el mejor resultado posible cuidando la tela."
   },
   {
     q: "¿Cómo solicito una cotización exacta?",
@@ -183,6 +190,10 @@ export const FAQS = [
   {
     q: "¿Dónde atienden y cómo se coordina la cita?",
     a: "Atendemos exclusivamente a domicilio en Cajamarca y Baños del Inca, siempre con cita previa programada según disponibilidad. No contamos con local de atención al público."
+  },
+  {
+    q: "¿Cómo puedo pagar el servicio?",
+    a: "Puedes pagar con Yape al 937 712 772. Cuando nos confirmes tu servicio, te decimos el monto exacto."
   }
 ];
 

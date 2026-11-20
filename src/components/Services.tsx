@@ -43,7 +43,7 @@ export const Services: React.FC = () => {
         <div className="max-w-4xl mx-auto mb-12 bg-amber-500/10 border border-amber-500/20 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 text-amber-900 dark:text-amber-200">
           <Info className="h-5 w-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
           <p className="text-xs sm:text-sm leading-relaxed">
-            <strong>Transparencia en los resultados:</strong> Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.
+            <strong>Transparencia en los resultados:</strong> Realizamos una limpieza profunda según el material y el estado del artículo. Las manchas se atenúan entre un 50% y un 90% según el caso, nunca al 100%. Lo que sí garantizamos al 100% es la desinfección.
           </p>
         </div>
 
@@ -52,19 +52,29 @@ export const Services: React.FC = () => {
           {SERVICES.map((service: ServiceItem) => (
             <div
               key={service.id}
-              className={`bg-card rounded-2xl p-7 border transition-all duration-300 flex flex-col justify-between hover:shadow-card-hover group ${
+              className={`bg-card rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between hover:shadow-card-hover group ${
                 service.popular
                   ? 'border-primary/50 shadow-card relative ring-1 ring-primary/20'
                   : 'border-border/70 shadow-sm'
               }`}
             >
               {service.popular && (
-                <div className="absolute -top-3 right-6 bg-gradient-to-r from-primary to-accent text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                <div className="absolute -top-3 right-6 bg-gradient-to-r from-primary to-accent text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm z-10">
                   Muy Solicitado
                 </div>
               )}
 
-              <div>
+              {/* Service photo */}
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={`Lavado de ${service.title} a domicilio`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="p-7 pt-6 flex flex-col justify-between flex-1">
                 {/* Header card */}
                 <div className="flex items-center justify-between mb-5">
                   <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -94,23 +104,23 @@ export const Services: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </div>
 
-              {/* Action Button */}
-              <a
-                href={getWhatsAppUrl(`Hola, Zanca Limpieza. Quisiera una cotización para lavar: ${service.title}`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 border border-primary/30 text-primary bg-primary/5 hover:bg-primary hover:text-white transition-all duration-200"
-              >
-                <span>Cotizar {service.title}</span>
-                <ArrowRight className="h-4 w-4" />
-              </a>
+                {/* Action Button */}
+                <a
+                  href={getWhatsAppUrl(`Hola, Zanca Limpieza. Quisiera una cotización para lavar: ${service.title}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 border border-primary/30 text-primary bg-primary/5 hover:bg-primary hover:text-white transition-all duration-200"
+                >
+                  <span>Cotizar {service.title}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Perfumado opcional & Atención Callout */}
+        {/* Perfumado de regalo & Atención Callout */}
         <div className="mt-14 max-w-4xl mx-auto bg-card rounded-2xl p-6 sm:p-8 border border-border flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-xl bg-aqua-400/10 text-aqua-600 flex items-center justify-center shrink-0 mt-1">
@@ -118,10 +128,10 @@ export const Services: React.FC = () => {
             </div>
             <div>
               <h4 className="text-base sm:text-lg font-bold text-foreground mb-1">
-                Extra opcional: Perfumado de muebles y tapicerías
+                De regalo: perfumado suave incluido
               </h4>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Si lo deseas, puedes solicitar el perfumado como un servicio extra opcional para añadir un toque agradable de frescura tras la limpieza profunda. Consulta disponibilidad al solicitar tu cotización.
+                Al terminar cada servicio dejamos un perfumado suave de regalo, para que tus muebles queden frescos. Sin costo adicional.
               </p>
             </div>
           </div>

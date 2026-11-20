@@ -39,7 +39,7 @@ export const CoverageCajamarca: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground bg-muted/60 p-3 rounded-xl">
                   <Shield className="h-4 w-4 text-brand-600 shrink-0" />
-                  <span>Cuidado cuidadoso de tus espacios</span>
+                  <span>Cuidado responsable de tus espacios</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground bg-muted/60 p-3 rounded-xl">
                   <Navigation className="h-4 w-4 text-brand-600 shrink-0" />

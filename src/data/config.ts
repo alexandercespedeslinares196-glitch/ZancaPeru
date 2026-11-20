@@ -12,7 +12,13 @@ export const BUSINESS_CONFIG = {
   coverageArea: "Cajamarca y Baños del Inca",
   country: "Perú",
   attentionMode: "Servicio a domicilio en Cajamarca y Baños del Inca. Atención con cita previa.",
-  resultsDisclaimer: "Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.",
+  resultsDisclaimer: "Realizamos una limpieza profunda según el material y el estado del artículo. Las manchas se atenúan entre un 50% y un 90% según el caso, nunca al 100%. Lo que sí garantizamos al 100% es la desinfección.",
+  paymentMethod: "Yape al 937 712 772",
+  catalogUrl: "https://conexigo.com/p/the-best-cleaning-company-in-cajamarca",
+  social: {
+    facebook: "https://www.facebook.com/zancalimpieza",
+    instagram: "https://www.instagram.com/zancalimpieza"
+  },
   
   // Datos legales del negocio para pie de página y verificación
   legal: {
@@ -26,6 +32,9 @@ export const BUSINESS_CONFIG = {
   // Tiempos transparentes de servicio
   serviceTimes: {
     colchones: "Aproximadamente de 1 a 2 horas de lavado (este tiempo corresponde al lavado, no al secado).",
+    muebles: "Aproximadamente de 2 a 3 horas de lavado.",
+    sillonUnAsiento: "Entre 30 minutos y 1 hora de lavado.",
+    sillasComedor: "Aproximadamente 2 horas de lavado.",
     alfombras: "Aproximadamente de 3 a 5 días hábiles, incluido recojo y entrega a domicilio."
   },
 

@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6">
           {/* Logo — Zanca | Limpieza */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="#" className="flex items-center gap-2.5 group shrink-0">
             <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
               <span className="text-white font-black text-lg leading-none">Z</span>
             </div>
@@ -61,7 +61,7 @@ export const Navbar: React.FC = () => {
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <nav className="hidden xl:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -87,7 +87,7 @@ export const Navbar: React.FC = () => {
               href={`https://wa.me/${BUSINESS_CONFIG.phoneRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className={`hidden md:flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-lg transition-colors ${
+              className={`hidden md:flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
                 isScrolled ? "text-slate-800 hover:bg-slate-100" : "text-white hover:text-cyan-300 hover:bg-white/10"
               }`}
             >
@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`lg:hidden p-2 rounded-xl border transition-colors ${
+            className={`xl:hidden p-2 rounded-xl border transition-colors ${
               isScrolled
                 ? 'border-slate-200 text-slate-800 bg-slate-50'
                 : 'border-white/20 text-white bg-white/10'
@@ -124,7 +124,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl lg:hidden pt-24 px-6 pb-8 flex flex-col justify-between">
+        <div className="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl xl:hidden pt-24 px-6 pb-8 flex flex-col justify-between">
           <div className="flex flex-col space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <div className="flex items-center gap-2">

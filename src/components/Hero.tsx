@@ -10,11 +10,11 @@ export const Hero: React.FC = () => {
         <img
           src="/hero.jpg"
           alt="Lavado profesional de muebles y tapicería a domicilio en Cajamarca"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.2] contrast-[1.2]"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.6] contrast-[1.1]"
         />
         {/* Full-coverage dark vignette and deep oceanic overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/75 to-slate-950/95" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/60 to-slate-950/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-950/40 to-slate-950/80" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/25 to-slate-950/60 pointer-events-none" />
       </div>
 
       {/* Content */}

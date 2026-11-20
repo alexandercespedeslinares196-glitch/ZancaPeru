@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, Calendar, Building2 } from 'lucide-react';
+import { Phone, Mail, Calendar, Building2, Wallet } from 'lucide-react';
 import { BUSINESS_CONFIG, getWhatsAppUrl } from '../data/config';
 
 export const Footer: React.FC = () => {
@@ -30,6 +30,36 @@ export const Footer: React.FC = () => {
 
             <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-cyan-300 leading-relaxed font-medium">
               <strong>Servicio a domicilio en Cajamarca y Baños del Inca.</strong> Atención con cita previa.
+            </div>
+
+            <div>
+              <span className="text-slate-400 block text-[11px] uppercase tracking-wider font-semibold mb-2">Síguenos:</span>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href={BUSINESS_CONFIG.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:text-cyan-300 hover:border-cyan-400/40 transition-colors"
+                >
+                  Facebook
+                </a>
+                <a
+                  href={BUSINESS_CONFIG.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:text-cyan-300 hover:border-cyan-400/40 transition-colors"
+                >
+                  Instagram
+                </a>
+                <a
+                  href={BUSINESS_CONFIG.catalogUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-300 hover:border-cyan-400/40 transition-colors"
+                >
+                  Ver catálogo completo
+                </a>
+              </div>
             </div>
           </div>
 
@@ -104,7 +134,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <span className="text-cyan-400 font-semibold">
-                  Perfumado (extra opcional)
+                  Perfumado de regalo incluido
                 </span>
               </li>
             </ul>
@@ -141,6 +171,14 @@ export const Footer: React.FC = () => {
                 >
                   {BUSINESS_CONFIG.email}
                 </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-2.5 text-xs text-slate-300">
+              <Wallet className="h-4 w-4 text-cyan-400 shrink-0 mt-0.5" />
+              <div>
+                <span className="text-slate-400 block text-[11px] font-semibold">Forma de pago:</span>
+                <span className="font-bold text-white text-sm">{BUSINESS_CONFIG.paymentMethod}</span>
               </div>
             </div>
 

@@ -84,7 +84,7 @@ export const MethodProcess: React.FC = () => {
         <div className="max-w-4xl mx-auto mb-10 bg-muted/70 border border-border rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 text-foreground/90">
           <Info className="h-5 w-5 text-primary shrink-0 mt-0.5" />
           <p className="text-xs sm:text-sm leading-relaxed">
-            <strong>Explicación de resultados:</strong> Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.
+            <strong>Explicación de resultados:</strong> Realizamos una limpieza profunda según el material y el estado del artículo. Las manchas se atenúan entre un 50% y un 90% según el caso, nunca al 100%. Lo que sí garantizamos al 100% es la desinfección.
           </p>
         </div>
 

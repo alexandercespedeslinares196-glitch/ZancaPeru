@@ -70,7 +70,7 @@ export const Testimonials: React.FC = () => {
               Compromiso de Honestidad y Calidad
             </h4>
             <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-              Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.
+              Realizamos una limpieza profunda según el material y el estado del artículo. Las manchas se atenúan entre un 50% y un 90% según el caso, nunca al 100%. Lo que sí garantizamos al 100% es la desinfección.
             </p>
           </div>
         </div>

@@ -5,6 +5,7 @@ interface ComparisonItem {
   id: string;
   name: string;
   image: string;
+  beforeImage?: string;
   beforeFilter?: string;
   details: string;
   highlight: string;
@@ -20,23 +21,23 @@ export const BeforeAfterSlider: React.FC = () => {
     {
       id: "sofa",
       name: "Muebles de Tela",
-      image: "/before-after.jpg",
-      beforeFilter: "sepia(0.35) saturate(0.55) brightness(0.65) contrast(1.2)",
+      image: "/antes-despues/muebles-despues.jpg",
+      beforeImage: "/antes-despues/muebles-antes.jpg",
       details: "Remoción profunda de acumulación de suciedad y polvo en tapicería de sala.",
       highlight: "Limpieza profunda de fibras"
     },
     {
       id: "colchon",
       name: "Colchón",
-      image: "/hero.jpg",
-      beforeFilter: "sepia(0.45) saturate(0.5) brightness(0.6) contrast(1.25)",
+      image: "/antes-despues/colchon-despues.jpg",
+      beforeImage: "/antes-despues/colchon-antes.jpg",
       details: "Extracción profunda de suciedad y neutralización de olores en colchón.",
       highlight: "Cuidado higiénico del descanso"
     },
     {
       id: "silla",
       name: "Sillas de Comedor",
-      image: "/before-after.jpg",
+      image: "/antes-despues/sillas.jpg",
       beforeFilter: "sepia(0.5) saturate(0.6) brightness(0.6) contrast(1.3)",
       details: "Limpieza focalizada de derrames y suciedad de uso diario sin dañar el tejido.",
       highlight: "Tapizado fresco y limpio"
@@ -141,11 +142,13 @@ export const BeforeAfterSlider: React.FC = () => {
               style={{ width: `${sliderPosition}%` }}
             >
               <img
-                src={currentComparison.image}
+                src={currentComparison.beforeImage || currentComparison.image}
                 alt="Estado del mueble antes de la limpieza"
                 className="w-full h-full object-cover object-center pointer-events-none"
                 style={{
-                  filter: currentComparison.beforeFilter || "sepia(0.4) saturate(0.5) brightness(0.65) contrast(1.2)",
+                  filter: currentComparison.beforeImage
+                    ? undefined
+                    : currentComparison.beforeFilter || "sepia(0.4) saturate(0.5) brightness(0.65) contrast(1.2)",
                   width: `${(100 / sliderPosition) * 100}%`,
                   maxWidth: 'none'
                 }}
@@ -194,7 +197,7 @@ export const BeforeAfterSlider: React.FC = () => {
           {/* Disclaimer under slider */}
           <div className="mt-3 text-center sm:text-left text-xs text-muted-foreground flex items-center gap-2 px-1">
             <Info className="h-3.5 w-3.5 text-primary shrink-0" />
-            <span>Realizamos una limpieza profunda según el material y el estado del artículo. Algunas manchas antiguas o tratadas previamente pueden no desaparecer por completo.</span>
+            <span>Realizamos una limpieza profunda según el material y el estado del artículo. Las manchas se atenúan entre un 50% y un 90% según el caso, nunca al 100%. Lo que sí garantizamos al 100% es la desinfección.</span>
           </div>
         </div>
       </div>

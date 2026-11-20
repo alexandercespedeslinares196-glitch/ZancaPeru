@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { getWhatsAppUrl } from '../data/config';
 
 export const WhatsAppWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNotificationBadge, setShowNotificationBadge] = useState(true);
-
-  useEffect(() => {
-    // Show popup bubble automatically after 4 seconds to assist user
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 4500);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
@@ -43,7 +34,6 @@ export const WhatsAppWidget: React.FC = () => {
               type="button"
               onClick={() => {
                 setIsOpen(false);
-                setShowNotificationBadge(false);
               }}
               className="p-1 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors"
               aria-label="Cerrar ventana de chat"
@@ -84,7 +74,6 @@ export const WhatsAppWidget: React.FC = () => {
         type="button"
         onClick={() => {
           setIsOpen(!isOpen);
-          setShowNotificationBadge(false);
         }}
         className="pointer-events-auto relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-floating hover:scale-110 active:scale-95 transition-all duration-200 group"
         aria-label="Abrir WhatsApp"
@@ -93,13 +82,6 @@ export const WhatsAppWidget: React.FC = () => {
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30 group-hover:opacity-50" />
 
         <MessageCircle className="h-7 w-7 sm:h-8 sm:w-8 fill-white relative z-10" />
-
-        {/* Unread dot badge */}
-        {showNotificationBadge && !isOpen && (
-          <span className="absolute -top-1 -right-1 w-5 h-5 bg-rose-500 text-white text-[11px] font-bold rounded-full flex items-center justify-center shadow-md animate-bounce">
-            1
-          </span>
-        )}
       </button>
     </div>
   );
